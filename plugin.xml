@@ -50,15 +50,15 @@
     <!-- ios -->
     <platform name="ios">
         <config-file target="config.xml" parent="/*">
-            <feature name="AdMobPlugin">
-                <param name="ios-package" value="AdMobPlugin"/>
+            <feature name="FacebookSdkPlugin">
+                <param name="ios-package" value="FacebookSdkPlugin"/>
                 <param name="onload" value="true"/>
             </feature>
         </config-file>
 
 
-        <header-file src="src/ios/AdMobPlugin.h"/>
-        <source-file src="src/ios/AdMobPlugin.m"/>
+        <header-file src="src/ios/FacebookSdkPlugin.h"/>
+        <source-file src="src/ios/FacebookSdkPlugin.m"/>
         <!--spec 必须有，否则安装报错 pod search -->
         <framework src="FacebookSDK" type="podspec" spec="~> 4.38.0"/>
 

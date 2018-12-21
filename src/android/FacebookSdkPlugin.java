@@ -1,5 +1,11 @@
 package me.mingz.cordova.facebook;
 
+
+import android.app.Activity;
+
+import org.apache.cordova.CordovaPlugin;
+
+
 import com.facebook.FacebookSdk;
 
 public class FacebookSdkPlugin extends CordovaPlugin {
@@ -16,6 +22,8 @@ public class FacebookSdkPlugin extends CordovaPlugin {
     @Override
     protected void pluginInitialize() {
         super.pluginInitialize();
+
+
     }
 
     @Override
@@ -38,11 +46,6 @@ public class FacebookSdkPlugin extends CordovaPlugin {
 
         super.onDestroy();
     }
-
-
-
-
-
 
 
 }
