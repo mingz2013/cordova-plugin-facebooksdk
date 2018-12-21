@@ -3,10 +3,10 @@
         xmlns:android="http://schemas.android.com/apk/res/android"
         id="cordova-plugin-facebooksdk"
         version="0.0.1">
-    <name>Admob Plugin</name>
-    <description>Cordova Admob Plugin</description>
+    <name>Facebook sdk Plugin</name>
+    <description>Cordova Facebook Sdk Plugin</description>
     <license>Apache 2.0</license>
-    <keywords>cordova,admob</keywords>
+    <keywords>cordova,facebook</keywords>
     <repo>https://github.com/mingz2013/cordova-plugin-facebooksdk.git</repo>
     <issue>https://github.com/mingz2013/cordova-plugin-facebooksdk/issues</issue>
 
