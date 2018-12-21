@@ -1,0 +1,71 @@
+<plugin xmlns="http://apache.org/cordova/ns/plugins/1.0"
+        xmlns:rim="http://www.blackberry.com/ns/widgets"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        id="cordova-plugin-facebooksdk"
+        version="0.0.1">
+    <name>Admob Plugin</name>
+    <description>Cordova Admob Plugin</description>
+    <license>Apache 2.0</license>
+    <keywords>cordova,admob</keywords>
+    <repo>https://github.com/mingz2013/cordova-plugin-facebooksdk.git</repo>
+    <issue>https://github.com/mingz2013/cordova-plugin-facebooksdk/issues</issue>
+
+
+    <preference name="FACEBOOK_APP_ID" value=""/>
+
+    <js-module src="www/FacebookSdk.js" name="FacebookSdk">
+        <clobbers target="FacebookSdk"/>
+    </js-module>
+
+
+    <!-- android -->
+    <platform name="android">
+
+        <framework src="src/android/facebooksdk.gradle" custom="true" type="gradleReference"/>
+
+        <!--<config-file target="strings.xml" parent="/*">-->
+            <!--<string name="facebook_app_id">$FACEBOOK_APP_ID</string>-->
+        <!--</config-file>-->
+
+        <config-file target="AndroidManifest.xml" parent="/manifest">
+            <uses-permission android:name="android.permission.INTERNET"/>
+        </config-file>
+
+
+        <config-file target="AndroidManifest.xml" parent="/manifest/application">
+            <meta-data android:name="com.facebook.sdk.ApplicationId" android:value="$FACEBOOK_APP_ID"/>
+        </config-file>
+
+        <config-file target="res/xml/config.xml" parent="/*">
+            <feature name="FacebookSdk">
+                <param name="android-package" value="me.mingz.cordova.facebook.FacebookSdkPlugin"/>
+                <param name="onload" value="true"/>
+            </feature>
+        </config-file>
+        <source-file src="src/android/FacebookSdkPlugin.java" target-dir="src/me/mingz/cordova/facebook" />
+
+
+    </platform>
+
+    <!-- ios -->
+    <platform name="ios">
+        <config-file target="config.xml" parent="/*">
+            <feature name="AdMobPlugin">
+                <param name="ios-package" value="AdMobPlugin"/>
+                <param name="onload" value="true"/>
+            </feature>
+        </config-file>
+
+
+        <header-file src="src/ios/AdMobPlugin.h"/>
+        <source-file src="src/ios/AdMobPlugin.m"/>
+        <!--spec 必须有，否则安装报错 pod search -->
+        <framework src="FacebookSDK" type="podspec" spec="~> 4.38.0"/>
+
+    </platform>
+
+
+
+
+
+</plugin>
